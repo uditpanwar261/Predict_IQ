@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { sensorsAPI, machinesAPI } from '../utils/api';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#3b82f6','#10b981','#f59e0b','#ef4444','#8b5cf6','#06b6d4','#f97316','#ec4899'];
 
 export default function LiveMonitor() {
   const [machines, setMachines] = useState([]);
@@ -29,6 +28,7 @@ export default function LiveMonitor() {
 
   useEffect(() => { if (selectedMachine) loadReadings(selectedMachine); }, [selectedMachine]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!autoRefresh) return;
     const t = setInterval(() => simulateAndLoad(), interval_s * 1000);

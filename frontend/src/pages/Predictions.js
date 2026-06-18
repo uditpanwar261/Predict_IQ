@@ -26,7 +26,7 @@ function GaugeMeter({ value, max = 100 }) {
     <svg width="140" height="90" viewBox="0 0 140 90">
       <path d="M 14 76 A 56 56 0 0 1 126 76" fill="none" stroke="#1e3a5f" strokeWidth="10" strokeLinecap="round" />
       <path d="M 14 76 A 56 56 0 0 1 126 76" fill="none" stroke={color} strokeWidth="10" strokeLinecap="round"
-        strokeDasharray={`${(pct/100) * 175.9} 175.9`} style={{transition:'stroke-dasharray 0.7s ease'}} />
+        strokeDasharray={`${dash} 175.9`} style={{transition:'stroke-dasharray 0.7s ease'}} />
       <text x="70" y="68" textAnchor="middle" fill="white" fontSize="22" fontWeight="700" fontFamily="monospace">{Math.round(value)}%</text>
       <text x="70" y="82" textAnchor="middle" fill="#8ba4c7" fontSize="9">failure probability</text>
     </svg>
